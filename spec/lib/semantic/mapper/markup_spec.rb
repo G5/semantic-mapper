@@ -1,4 +1,4 @@
-require 'spec/spec_helper'
+require 'spec_helper'
 
 describe Semantic::Mapper::Markup do
   let(:markup) { Semantic::Mapper::Markup.new(html) }

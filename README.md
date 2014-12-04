@@ -2,15 +2,22 @@
 
 Takes some markup of the form:
 ```html
-   <div class="form-field">
-     <label for="p-first-name" class="required">First Name</label>
-     <input type="text" id="p-first-name" class="p-first-name" name="p-first-name" data-mapping="first_name" required>
-   </div>
+<div class="p-author h-card">
+  <div class="form-field">
+    <label for="p-first-name" class="required">First Name</label>
+    <input type="text" id="p-first-name" class="p-first-name" name="p-first-name" data-mapping="first_name" required>
+  </div>
+
+  <div class="form-field">
+    <label for="p-last-name" class="required">Last Name</label>
+    <input type="text" id="p-last-name" class="p-last-name" name="p-last-name" data-mapping="last_name" required>
+  </div>
+</div>
 ```
 
 and returns an indifferent hash of the form:
 ```ruby
-  {first_name: 'p-first-name'}
+  {first_name: 'p-first-name', last_name: 'p-last-name'}
 ```
 
 ## Installation
