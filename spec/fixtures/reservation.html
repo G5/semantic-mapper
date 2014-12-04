@@ -1,0 +1,115 @@
+<div class="p-author h-card">
+  <div class="form-field">
+    <label for="p-first-name" class="required">First Name</label>
+    <input type="text" id="p-first-name" class="p-first-name" name="p-first-name" data-mapping="first_name" required>
+  </div>
+
+  <div class="form-field">
+    <label for="p-last-name" class="required">Last Name</label>
+    <input type="text" id="p-last-name" class="p-last-name" name="p-last-name" data-mapping="last_name" required>
+  </div>
+
+  <div class="form-field">
+    <label for="p-address1" class="required">Address</label>
+    <input type="text" id="p-address1" class="p-address1" name="p-address1" data-mapping="address1" required>
+  </div>
+
+  <div class="form-field">
+    <label for="p-city" class="required">City</label>
+    <input type="text" id="p-city" class="p-city" name="p-city" data-mapping="city" required>
+  </div>
+
+  <div class="form-field">
+    <label for="p-state" class="required">State</label>
+    <input type="text" id="p-state" class="p-state" name="p-state" data-mapping="region" required>
+  </div>
+
+  <div class="form-field">
+    <label for="p-postal-code" class="required">Zip</label>
+    <input type="text" id="p-postal-code" class="p-postal-code" name="p-postal-code" data-mapping="postal_code" required>
+  </div>
+
+  <div class="form-field">
+    <label for="p-tel">Phone Number</label>
+    <input type="tel" id="p-tel" class="p-tel" name="p-tel" data-mapping="phone">
+  </div>
+
+  <div class="form-field">
+    <label for="u-email" class="required">Email</label>
+    <input type="email" id="u-email" class="u-email" name="u-email" data-mapping="email" required>
+  </div>
+
+  <div class="form-field">
+    <label for="p-card-type" class="required">Card Type</label>
+    <select id="p-card-type" class="p-card-type" name="p-card-type" data-mapping="credit_card_type" required>
+      <option value="visa">Visa</option>
+      <option value="mastercard">Mastercard</option>
+      <option value="discover">Discover</option>
+      <option value="amex">Amex</option>
+    </select>
+  </div>
+
+  <div class="form-field">
+    <label for="p-card-number" class="required">Card #</label>
+    <input type="text" id="p-card-number" class="p-card-number" name="p-card-number" title="Credit Card (Numbers only, no spaces or dashes)" size="20" maxlength="16" placeholder="Credit Card (No spaces no dashes)" autocomplete="off" pattern="[0-9]{13,16}" data-mapping="credit_card_number"
+     required>
+  </div>
+
+  <div class="form-field">
+    <label for="p-cvv-number" class="required">CVV#</label>
+    <input type="text" id="p-cvv-number" class="p-cvv-number" name="p-cvv-number" title="CVV (Numbers only, 3 or 4 digit security code)" size="4" maxlength="4" placeholder="XXX" pattern="[0-9]{3,4}" autocomplete="off" data-mapping="credit_card_cvv_number" required>
+  </div>
+
+  <div class="form-field">
+    <label for="p-card-exp-month" class="required">Expiration Date:</label>
+    <select id="p-card-exp-month" class="p-card-exp-month" name="p-card-exp-month" data-mapping="credit_card_exp_month" required>
+      <option value="1">1 - January</option>
+      <option value="2">2 - February</option>
+      <option value="3">3 - March</option>
+      <option value="4">4 - April</option>
+      <option value="5">5 - May</option>
+      <option value="6">6 - June</option>
+      <option value="7">7 - July</option>
+      <option value="8">8 - August</option>
+      <option value="9">9 - September</option>
+      <option value="10">10 - October</option>
+      <option value="11">11 - November</option>
+      <option value="12">12 - December</option>
+    </select>
+    <select id="p-card-exp-year" class="p-card-exp-year" name="p-card-exp-year" data-mapping="credit_card_exp_year">
+      <option value="2014">2015</option>
+      <option value="2015">2016</option>
+      <option value="2016">2017</option>
+      <option value="2017">2018</option>
+      <option value="2018">2019</option>
+    </select>
+  </div>  
+</div>
+
+<div class="form-field">
+  <label for="e-content">Message (250 character limit)</label>
+  <textarea id="e-content" class="e-content" name="e-content" maxlength="250" data-mapping="message"></textarea>
+</div>
+
+<div class="form-field">
+  <label for="p-storage-unit-external-id" class="required">storage_unit_external_id</label>
+  <input type="text" id="p-storage-unit-external-id" class="p-storage-unit-external-id" name="p-storage-unit-external-id" data-mapping="storage_unit_external_id" required>
+</div>
+
+<div class="form-field">
+  <label for="p-rental-rate" class="required">Rental Rate</label>
+  <input type="text" id="p-rental-rate" class="p-rental-rate" name="p-rental-rate" data-mapping="rental_rate" required>
+</div>
+
+<div class="form-field">
+  <label for="p-reservation-date" class="required">Desired Move-In Date</label>
+  <input type="date" id="p-reservation-date" class="p-reservation-date" name="p-reservation-date" data-mapping="reservation_date" required>
+</div>
+
+<div class="form-field">
+  <label for="p-time-zone" class="required">Time Zone</label>
+  <input type="text" id="p-time-zone" class="p-time-zone" name="p-time-zone" data-mapping="time_zone" required>
+</div>
+
+<input type="submit" value="Send" />
+<span class="form-instruction">* Required Field</span>
