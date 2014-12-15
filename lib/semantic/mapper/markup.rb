@@ -8,13 +8,16 @@ module Semantic
       end
 
       def map
-        document.css(SELECTOR).inject({}) do |hash, element|
-          hash[attribute_value(element, 'data-mapping')] = attribute_value(element, 'name')
-          hash
-        end.with_indifferent_access
+        document.css(SELECTOR).each_with_object(HashWithIndifferentAccess.new) do |element,hash|
+          fields(element).each { |key| hash[key] = attribute_value(element, 'name') }
+        end
       end
 
       private
+      def fields(element)
+        attribute_value(element, 'data-mapping').split(" ")
+      end  
+
       def document
         @document ||= Nokogiri::HTML(@html)
       end

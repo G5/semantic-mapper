@@ -8,7 +8,9 @@ describe Semantic::Mapper::Markup do
     subject { markup.map }
 
     its([:first_name]) { is_expected.to eq('p-first-name') }
-    its([:last_name]) { is_expected.to eq('p-last-name') }
+    its(["last_name"]) { is_expected.to eq('p-last-name') }
+    its([:address1]) { is_expected.to eq('p-address1') }
+    its([:billing_address]) { is_expected.to eq('p-address1') }
     its([:credit_card_type]) { is_expected.to eq('p-card-type') }
     its([:credit_card_exp_month]) { is_expected.to eq('p-card-exp-month') }
     its([:message]) { is_expected.to eq('e-content') }
