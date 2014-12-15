@@ -7,10 +7,8 @@ describe Semantic::Mapper::Markup do
   describe :map do
     subject { markup.map }
 
-    its([:customer][:first_name]) { is_expected.to eq('p-first-name') }
-    its(["customer"]["last_name"]) { is_expected.to eq('p-last-name') }
-    its([:customer][:email]) { is_expected.to eq('p-email') }
-    its([:customer][:phone]) { is_expected.to eq('p-phone') }
+    its([:first_name]) { is_expected.to eq('p-first-name') }
+    its(["last_name"]) { is_expected.to eq('p-last-name') }
     its([:address1]) { is_expected.to eq('p-address1') }
     its([:billing_address]) { is_expected.to eq('p-address1') }
     its([:credit_card_type]) { is_expected.to eq('p-card-type') }
