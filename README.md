@@ -37,8 +37,8 @@ Supports nested properties
 <div class="p-author h-card">
   <div class="form-field">
     <label for="p-first-name" class="required">First Name</label>
-    <input type="text" id="p-first-name" class="p-first-name" name="p-first-name" data-mapping="customer[first_name]"  required>
-    <input type="text" id="p-state" class="p-state" name="p-state" data-mapping="customer[address][state]"  required>
+    <input type="text" id="p-first-name" class="p-first-name" name="p-first-name" data-mapping="customer[first_name]" required>
+    <input type="text" id="p-state" class="p-state" name="p-state" data-mapping="customer[address][state]" required>
   </div>
 ```
 ```ruby
