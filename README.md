@@ -20,6 +20,31 @@ and returns an indifferent hash of the form:
   {first_name: 'p-first-name', last_name: 'p-last-name'}
 ```
 
+Supports mapping multiple properties to the same form field
+```html
+<div class="p-author h-card">
+  <div class="form-field">
+    <label for="p-first-name" class="required">First Name</label>
+    <input type="text" id="p-first-name" class="p-first-name" name="p-first-name" data-mapping="first_name billing_first_name" required>
+  </div>
+```
+```ruby
+  {first_name: 'p-first-name', billing_first_name: 'p-first-name'}
+```
+
+Supports nested properties
+```html
+<div class="p-author h-card">
+  <div class="form-field">
+    <label for="p-first-name" class="required">First Name</label>
+    <input type="text" id="p-first-name" class="p-first-name" name="p-first-name" data-mapping="customer[first_name]"  required>
+    <input type="text" id="p-state" class="p-state" name="p-state" data-mapping="customer[address][state]"  required>
+  </div>
+```
+```ruby
+  {customer: {first_name: 'p-first-name', address: {state: 'p-state'}}}
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:
