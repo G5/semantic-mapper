@@ -2,6 +2,7 @@ module Semantic
   module Mapper
     class Markup
       SELECTOR = '[data-mapping]'
+      attr_reader :mapped_hash
 
       def initialize(html)
         @html = html
@@ -12,7 +13,7 @@ module Semantic
         document.css(SELECTOR).each do |element|
           fields(element).each do |key| 
             final_attribute_value = attribute_value(element, 'name')
-            keys = key.scan(/([\w-]+)|\[([\w-]+?)\]/).flatten.compact
+            keys = build_keys(key)
             map_hash(final_attribute_value, keys)
           end 
         end
@@ -26,7 +27,11 @@ module Semantic
         current_key = keys.pop
         value = HashWithIndifferentAccess.new(current_key => value)
         map_hash(value, keys)
-      end  
+      end
+
+      def build_keys(key)
+        key.scan(/([\w-]+)|\[([\w-]+?)\]/).flatten.compact
+      end
 
       def merge_or_set(key, value)
         if @mapped_hash.has_key?(key)
