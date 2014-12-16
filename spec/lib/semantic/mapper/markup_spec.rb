@@ -6,17 +6,24 @@ describe Semantic::Mapper::Markup do
 
   describe :map do
     subject { markup.map }
-
-    its([:first_name]) { is_expected.to eq('p-first-name') }
-    its(["last_name"]) { is_expected.to eq('p-last-name') }
-    its([:address1]) { is_expected.to eq('p-address1') }
-    its([:billing_address]) { is_expected.to eq('p-address1') }
-    its([:credit_card_type]) { is_expected.to eq('p-card-type') }
-    its([:credit_card_exp_month]) { is_expected.to eq('p-card-exp-month') }
-    its([:message]) { is_expected.to eq('e-content') }
-    its([:storage_unit_external_id]) { is_expected.to eq('p-storage-unit-external-id') }
-    its([:rental_rate]) { is_expected.to eq('p-rental-rate') }
-    its([:reservation_date]) { is_expected.to eq('p-reservation-date') }
-    its([:time_zone]) { is_expected.to eq('p-time-zone') }
+    it "maps attributes" do
+      expect(subject[:customer][:first_name]).to eq('p-first-name')
+      expect(subject[:customer][:last_name]).to eq('p-last-name')
+      expect(subject[:address1]).to eq('p-address1')
+      expect(subject[:billing_address]).to eq('p-address1')
+      expect(subject[:customer][:street_address][:city]).to eq('p-city')
+      expect(subject[:customer][:street_address][:region]).to eq('p-state')
+      expect(subject[:credit_card_type]).to eq('p-card-type')
+      expect(subject[:credit_card_exp_month]).to eq('p-card-exp-month')
+      expect(subject[:message]).to eq('e-content')
+      expect(subject[:storage_unit_external_id]).to eq('p-storage-unit-external-id')
+      expect(subject[:rental_rate]).to eq('p-rental-rate')
+      expect(subject[:reservation_date]).to eq('p-reservation-date')
+      expect(subject[:time_zone]).to eq('p-time-zone')
+    end
   end
 end
+
+
+
+#{}"customer[street_address][city]"
