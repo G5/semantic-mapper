@@ -23,7 +23,3 @@ describe Semantic::Mapper::Markup do
     end
   end
 end
-
-
-
-#{}"customer[street_address][city]"
